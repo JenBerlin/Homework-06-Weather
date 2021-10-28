@@ -11,6 +11,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap"
+      rel="stylesheet"
+    />
     <title>Weater Dashboard</title>
   </head>
   <body>
@@ -31,13 +35,13 @@
             For which city?
           </h5>
           <input
-            type="email"
+            type="text"
             class="form-control mb-3 pb-2 pt-2 border-warning mt-2"
-            id="inputEmail3"
+            id="city"
             placeholder="Search"
           />
           <!-- Mach es einen Unterschied welcher typ/type der Button ist? z. B. type="button", type="submit" -->
-          <button type="submit" class="btn btn-outline-primary mt-1">
+          <button id="check" type="submit" class="btn btn-outline-primary mt-1">
             Let's check
           </button>
 
@@ -48,7 +52,7 @@
           </ul>
         </div>
 
-        <!-- Second main card: containing the current city and the forecast -->
+        <!-- Second main card: containing the current day and the forecast -->
         <div
           class="
             col-9 col-md-9
@@ -78,52 +82,26 @@
             <!-- Icon needs to be added to the current city -->
           </div>
 
-          <!-- Label + Input for the four values: Temp, Wind, Humidity, UV Index -->
-          <div class="row g-3 align-items-center border-light">
-            <!-- Temp -->
-            <div class="col-2">
-              <label for="Temp" class="col-form-label ps-3">Temp:</label>
+          <!-- Divs for the four values: Temp, Wind, Humidity, UV Index -->
+          <div class="row g-4 align-items-center border-light">
+            <div class="col-8">
+              <div id="current-temp" class="fw-5 pb-3 ps-3">
+                Temp: <span id="temp11"></span>°C
+              </div>
+              <div id="current-wind" class="fw-5 pb-3 ps-3">
+                Wind: <span id="min-temp"></span>km/h
+              </div>
+              <div id="current-huminidy" class="fw-5 pb-3 ps-3">
+                Humidity: <span id="max-temp"></span>%
+              </div>
+              <div id="current-uv" class="fw-5 ps-3">
+                UV Index:
+                <input class="rounded-pill" type="text" name="UVI" id="UVI" />
+              </div>
             </div>
-            <div class="col-10">
-              <!-- id used for temp by js/API -->
-              <!-- Include border-light for the input field -->
-              <input type="Temp" id="TempCurrent" class="form-control" />
-            </div>
-
-            <!-- Wind -->
-            <div class="col-2">
-              <label for="Wind" class="col-form-label ps-3">Wind:</label>
-            </div>
-            <div class="col-10">
-              <!-- id used for wind by js/API -->
-              <!-- Include border-light for the input field -->
-              <input type="Wind" id="WindCurrent" class="form-control" />
-            </div>
-
-            <!-- Humidity -->
-            <div class="col-2">
-              <label for="Wind" class="col-form-label ps-3">Humidity:</label>
-            </div>
-            <div class="col-10">
-              <!-- id used for Humidity by js/API -->
-              <!-- Include border-light for the input field -->
-              <input
-                type="Humidity"
-                id="HumidityCurrent"
-                class="form-control"
-              />
-            </div>
-
-            <!-- UV Index -->
-            <div class="col-2">
-              <label for="UV-Index" class="col-form-label ps-3"
-                >UV Index:</label
-              >
-            </div>
-            <div class="col-10">
-              <!-- id used for UV Index by js/API -->
-              <!-- Include border-light for the input field -->
-              <input type="UV-Index" id="UVIndexCurrent" class="form-control" />
+            <!-- Current weather icon -->
+            <div class="col-4">
+              <img src="" alt="current-weather-icon" />
             </div>
 
             <!-- Forecast cards -->
@@ -143,46 +121,49 @@
               5 Days Forecast
             </div>
 
-            <!-- Felx is not working -->
+            <!-- Felx works somehow -->
             <div class="card-group d-flex flex-wrap">
-              <div class="card">
-                <div class="card-body d-flex flex-wrap">
-                  <label for="Temp" class="col-form-label ps-3">Temp:</label>
-                  <!-- id used for temp by js/API -->
-                  <!-- Include border-light for the input field -->
-                  <input type="Temp" id="TempCurrent" class="form-control" />
+              <div class="card bg-light">
+                <div>
+                  <div id="DayF1" class="ps-3 pt-3">Date</div>
+                  <div id="IconF1" class="ps-3">Icon</div>
+                  <div class="fw-5 pb-3 ps-3">
+                    Temp: <span id="temp11"></span>°C
+                  </div>
+                  <div class="fw-5 pb-3 ps-3">
+                    Wind: <span id="min-temp"></span>km/h
+                  </div>
+                  <div class="fw-5 pb-3 ps-3">
+                    Humidity: <span id="max-temp"></span>%
+                  </div>
                 </div>
               </div>
               <div class="card">
-                <div class="card-body d-flex flex-wrap">
-                  <label for="Temp" class="col-form-label ps-3">Temp:</label>
-                  <!-- id used for temp by js/API -->
-                  <!-- Include border-light for the input field -->
-                  <input type="Temp" id="TempCurrent" class="form-control" />
+                <div>
+                  <div id="DayF2" class="ps-3 pt-3">Date</div>
+                  <div id="IconF2" class="ps-3">Icon</div>
+                  <!-- Add the rest -->
+                </div>
+              </div>
+              <div class="card bg-light">
+                <div>
+                  <div id="DayF3" class="ps-3 pt-3">Date</div>
+                  <div id="IconF3" class="ps-3">Icon</div>
+                  <!-- Add the rest -->
                 </div>
               </div>
               <div class="card">
-                <div class="card-body d-flex flex-wrap">
-                  <label for="Temp" class="col-form-label ps-3">Temp:</label>
-                  <!-- id used for temp by js/API -->
-                  <!-- Include border-light for the input field -->
-                  <input type="Temp" id="TempCurrent" class="form-control" />
+                <div>
+                  <div id="DayF4" class="ps-3 pt-3">Date</div>
+                  <div id="IconF4" class="ps-3">Icon</div>
+                  <!-- Add the rest -->
                 </div>
               </div>
-              <div class="card">
-                <div class="card-body d-flex flex-wrap">
-                  <label for="Temp" class="col-form-label ps-3">Temp:</label>
-                  <!-- id used for temp by js/API -->
-                  <!-- Include border-light for the input field -->
-                  <input type="Temp" id="TempCurrent" class="form-control" />
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body d-flex flex-wrap">
-                  <label for="Temp" class="col-form-label ps-3">Temp:</label>
-                  <!-- id used for temp by js/API -->
-                  <!-- Include border-light for the input field -->
-                  <input type="Temp" id="TempCurrent" class="form-control" />
+              <div class="card bg-light">
+                <div>
+                  <div id="DayF5" class="ps-3 pt-3">Date</div>
+                  <div id="IconF5" class="ps-3">Icon</div>
+                  <!-- Add the rest -->
                 </div>
               </div>
             </div>
@@ -207,5 +188,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>
