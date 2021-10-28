@@ -10,13 +10,30 @@ function saveHistory (history){
 }
 
 // Implement wheater API with fetch fuction; getting the wheater data for the city
-function getWeatherFromAPI(city) {
-  const weatherApiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=6&appid=${"d85e1324298ab6b05c6dc20c2cc8da56"}&units=metric` ;
 
-  return fetch(weatherApiUrl)
-    .then(function (weatherApiResponse) {
-      return weatherApiResponse.json();
-    })
+const getWeatherFromAPI = async(city) => {
+  const weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Berlin&appid=d85e1324298ab6b05c6dc20c2cc8da56&units=metric`;
+
+try {
+    const response = await fetch(weatherApiUrl)
+    const data = await response.json()
+    console.log(data)
+    return data
+} catch (error) {
+    
+}
+
+function currentDayCard(data) {
+$("#temp11").innerHTML(data.list[0].main.temp)
+}
+
+//   return fetch(weatherApiUrl)
+//     .then(function (weatherApiResponse) {
+//         console.log(weatherApiResponse)
+//       return weatherApiResponse.json();
+//     }).catch(function(error){
+//         console.log(error)
+//     })
 }
 
 function showHistory(history){
@@ -32,7 +49,6 @@ function showHistory(history){
 // implement the main fuction
 function showWheaterCity(event){
     console.log(event.target)
-
 }
 
 function showWeather(data){
@@ -43,7 +59,6 @@ $("#check").on("click", function(){
     const city = cityNode.val()
     searchHistory.push(city)
     saveHistory(searchHistory)
-
 
     getWeatherFromAPI(city).then(function (result){
         showWeather(result)
