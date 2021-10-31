@@ -66,6 +66,8 @@ Contains the styling for ...
 
 **Screenshot**
 
+![Screen Shot 2021-10-31 at 19 40 25](https://user-images.githubusercontent.com/90558898/139598396-22091ce3-7205-48f9-add7-28ab4ca6170d.png)
+
 **Repositery content and links**
 
 - index.html
