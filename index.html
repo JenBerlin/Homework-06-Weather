@@ -69,11 +69,10 @@
             id="card-title"
           >
             <!-- Date needs to be added; do I use moments for it? -->
-            <h4 class="fw-bold">
+            <h4 class="fw-bold" id="display-city">
               Placeholder: City shown by js/API (date)
-              <img src="http://openweathermap.org/img/w/04n.png" />
             </h4>
-            <!-- Icon needs to be added to the current city -->
+            <img id="icon-current" src="" />
           </div>
 
           <!-- Divs for the four values: Temp, Wind, Humidity, UV Index -->
@@ -90,7 +89,7 @@
               </div>
               <div id="current-uv" class="fw-5 ps-3">
                 UV Index: <span id="uv11"></span>
-                
+
                 <input class="rounded-pill" type="text" name="UVI" id="UVI" />
               </div>
             </div>
@@ -116,19 +115,19 @@
             <div class="card-group d-flex flex-wrap justify-content-around">
               <div class="card bg-light">
                 <div>
-                  <div id="DayF1" class="ps-3 pt-3">Date</div>
+                  <div id="dayF1" class="ps-3 pt-3">Date</div>
                   <div id="IconF1" class="ps-3">
                     <!-- Icon needs to be changed -->
-                    <img src="http://openweathermap.org/img/w/04n.png" />
+                    <img id="icon-F1" src="" />
                   </div>
                   <div class="fw-5 pb-3 ps-3">
-                    Temp: <span id="temp11"></span>°C
+                    Temp: <span id="tempF1"></span>°C
                   </div>
                   <div class="fw-5 pb-3 ps-3">
-                    Wind: <span id="min-temp"></span>km/h
+                    Wind: <span id="windF1"></span>km/h
                   </div>
                   <div class="fw-5 pb-3 ps-3">
-                    Humidity: <span id="max-temp"></span>%
+                    Humidity: <span id="humidityF1"></span>%
                   </div>
                 </div>
               </div>
