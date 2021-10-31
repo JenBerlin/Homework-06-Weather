@@ -1,90 +1,78 @@
-# 06 Server-Side APIs: Weather Dashboard
+# Server-Side APIs: Weather Dashboard
 
-## Your Task
+**##Content of this file\*\***
 
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+- Description
+- Requirments
+- Building Structure of the code
+- Screenshot
+- Repositery content and links
 
-Use the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) to retrieve weather data for cities. Read through the documentation for setup and usage instructions. You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
+**##Description\*\***
 
-## User Story
+On the GitHub page (Link) you will find a Weather App web application. The application gives the user a input field to add a city name and to submit it via the "Let's check" button. The searchd city names are getting stored under the search button. To give the user the option to go back to the respective city. The weather app itself shows the user the current weather and a forecast for the following five days for the city. Within the current weather the user gets the data for the date, temperatur, wind per km/h, humidity by % and the UV index. Within the five days forecast the user sees the date, temperatur, wind per km/h and humidity by %. Each weather display includes a weather ican as well.
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+**##Requierments\*\***
 
-## Acceptance Criteria
+Besides setting up an index.htlm, style.css and script.js file the following frameworks/APIs were requiered to include:
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-```
+- Framework: Bootsstrap, https://getbootstrap.com/
+- Framework: jQuery, https://jquery.com/
+- API - current weather: https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=d85e1324298ab6b05c6dc20c2cc8da56&units=metric
+- API - forecast weather: https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=d85e1324298ab6b05c6dc20c2cc8da56&units=metric
 
-## Mock-Up
+**##Building Structure of the code\*\***
 
-The following image shows the web application's appearance and functionality:
+HTML
+Head containes ...
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./Assets/06-server-side-apis-homework-demo.png)
+- Link to Bootsstrap
+- Link to GoogleFonts
+- Link to CSS style sheet
+- Title
 
-## Grading Requirements
+Body contains incl. bootstrap ...
 
-This homework is graded based on the following criteria: 
+- Body:
+  - Header: paragraph with the headline
+  - Main:
+    - div as a container card + input field + search button
+    - h6 for the titel "Already checked cities"
+    - ul for the stored city names
+    - div card for the current weather display (city, date, temperature, wind, humidity and UV index)
+    - five div cards for the forecast (date, temperatur, wind and humidity)
+- Link to bootsstrap
+- Link to jQuery
+- Link to the script.js file
 
-### Technical Acceptance Criteria: 40%
+JS
 
-* Satisfies all of the above acceptance criteria plus the following:
+- Variable for searchHistory
+- Variable for city name
+- Variable for stored city list
+- Function to save the stored cities (history)
+- Function to get the data from the two APIs
+- Function to include the data for the current weather in the respective div
+- Function for the five furecast weather cards
+- Function to display the stored city names
+- Function to get the data for the current weather and the forecast weather
+- Fuction to display the stored cities (history)
 
-    * Uses the OpenWeather API to retrieve weather data.
+CSS
 
-    * Uses `localStorage` to store persistent data.
+Contains the styling for ...
 
-### Deployment: 32%
+- universal styling
 
-* Application deployed at live URL.
+**Screenshot**
 
-* Application loads with no errors.
+**Repositery content and links**
 
-* Application GitHub URL submitted.
+- index.html
+- Asset folder: style.css
+- Asset folder: script.js
+- README.md
+- ScreenShot folder: Screenshot of the application
 
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+- GitHub: https://github.com/JenBerlin/Homework-06-Weather
+- GitHub Page: https://jenberlin.github.io/Homework-06-Weather/
