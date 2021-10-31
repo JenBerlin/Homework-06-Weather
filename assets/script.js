@@ -47,35 +47,35 @@ function forecastCard1(data) {
     console.log(date.toLocaleDateString())
     
     $("#dayF1").text(date.toLocaleDateString())
-    // $("#iconF1").attr("src", `http://openweathermap.org/img/wn/${data.daily[1].weather[1].icon}.png`)
+    $("#iconF1").attr("src", `http://openweathermap.org/img/wn/${data.daily[1].weather[0].icon}.png`)
     $("#tempF1").text(data.daily[1].temp.day)
     $("#windF1").text(data.daily[1].wind_speed)
     $("#humidityF1").text(data.daily[1].humidity)
 
     date.setDate(date.getDate() + 1)
     $("#dayF2").text(date.toLocaleDateString())
-    // $("#iconF2").attr("src", `http://openweathermap.org/img/wn/${data.daily[2].weather[2].icon}.png`)
+    $("#iconF2").attr("src", `http://openweathermap.org/img/wn/${data.daily[2].weather[0].icon}.png`)
     $("#tempF2").text(data.daily[2].temp.day)
     $("#windF2").text(data.daily[2].wind_speed)
     $("#humidityF2").text(data.daily[2].humidity)
 
     date.setDate(date.getDate() + 1)
     $("#dayF3").text(date.toLocaleDateString())
-    // $("#icon-current").attr("src", `http://openweathermap.org/img/wn/${data.daily[3].weather[3].icon}.png`)
+    $("#iconF3").attr("src", `http://openweathermap.org/img/wn/${data.daily[3].weather[0].icon}.png`)
     $("#tempF3").text(data.daily[3].temp.day)
     $("#windF3").text(data.daily[3].wind_speed)
     $("#humidityF3").text(data.daily[3].humidity)
 
     date.setDate(date.getDate() + 1)
     $("#dayF4").text(date.toLocaleDateString())
-    // $("#icon-current").attr("src", `http://openweathermap.org/img/wn/${data.daily[4].weather[4].icon}.png`)
+    $("#iconF4").attr("src", `http://openweathermap.org/img/wn/${data.daily[4].weather[0].icon}.png`)
     $("#tempF4").text(data.daily[4].temp.day)
     $("#windF4").text(data.daily[4].wind_speed)
     $("#humidityF4").text(data.daily[4].humidity)
 
     date.setDate(date.getDate() + 1)
     $("#dayF5").text(date.toLocaleDateString())
-    // $("#icon-current").attr("src", `http://openweathermap.org/img/wn/${data.daily[5].weather[5].icon}.png`)
+    $("#iconF5").attr("src", `http://openweathermap.org/img/wn/${data.daily[5].weather[0].icon}.png`)
     $("#tempF5").text(data.daily[5].temp.day)
     $("#windF5").text(data.daily[5].wind_speed)
     $("#humidityF5").text(data.daily[5].humidity)
@@ -96,6 +96,7 @@ function showWheaterCity(event){
     getWeatherFromAPI(event.target.innerHTML)
     .then(function (result){
         currentDayCard(result)
+        // click already checked cities
         forecastCard1(result)
     })
 }

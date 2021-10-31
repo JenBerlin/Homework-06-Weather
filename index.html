@@ -89,8 +89,6 @@
             <!-- Forecast cards -->
             <div
               class="
-                col-md-9
-                container-fluid
                 mb-3
                 d-flex
                 flex-wrap
@@ -103,12 +101,19 @@
               5 Days Forecast
             </div>
 
-            <div class="card-group d-flex flex-wrap justify-content-around">
+            <div
+              class="
+                card-group
+                col-md-12
+                d-flex
+                flex-wrap
+                justify-content-around
+              "
+            >
               <div class="card bg-light">
                 <div>
                   <div id="dayF1" class="ps-3 pt-3"></div>
                   <div>
-                    <!-- not working  -->
                     <img id="iconF1" src="" />
                   </div>
                   <div class="fw-5 pb-3 ps-3">
@@ -125,49 +130,46 @@
               <div class="card">
                 <div>
                   <div id="dayF2" class="ps-3 pt-3"></div>
-                  <div id="iconF2" class="ps-3">
-                    <div>
-                      <!-- not working  -->
-                      <img id="iconF2" src="" />
-                    </div>
-                  </div>
-                  <div class="fw-5 pb-3 ps-3">
-                    Temp: <span id="tempF2"></span> °C
-                  </div>
-                  <div class="fw-5 pb-3 ps-3">
-                    Wind: <span id="windF2"></span> km/h
-                  </div>
-                  <div class="fw-5 pb-3 ps-3">
-                    Humidity: <span id="humidityF2"></span> %
+                  <!-- <div class="ps-3"></div> -->
+                  <div>
+                    <img id="iconF2" src="" />
                   </div>
                 </div>
+                <div class="fw-5 pb-3 ps-3">
+                  Temp: <span id="tempF2"></span> °C
+                </div>
+                <div class="fw-5 pb-3 ps-3">
+                  Wind: <span id="windF2"></span> km/h
+                </div>
+                <div class="fw-5 pb-3 ps-3">
+                  Humidity: <span id="humidityF2"></span> %
+                </div>
               </div>
+
               <div class="card bg-light">
                 <div>
                   <div id="dayF3" class="ps-3 pt-3"></div>
-                  <div id="iconF3" class="ps-3">
-                    <div>
-                      <!-- not working  -->
-                      <img id="iconF3" src="" />
-                    </div>
-                  </div>
-                  <div class="fw-5 pb-3 ps-3">
-                    Temp: <span id="tempF3"></span> °C
-                  </div>
-                  <div class="fw-5 pb-3 ps-3">
-                    Wind: <span id="windF3"></span> km/h
-                  </div>
-                  <div class="fw-5 pb-3 ps-3">
-                    Humidity: <span id="humidityF3"></span> %
+
+                  <div>
+                    <img id="iconF3" src="" />
                   </div>
                 </div>
+                <div class="fw-5 pb-3 ps-3">
+                  Temp: <span id="tempF3"></span> °C
+                </div>
+                <div class="fw-5 pb-3 ps-3">
+                  Wind: <span id="windF3"></span> km/h
+                </div>
+                <div class="fw-5 pb-3 ps-3">
+                  Humidity: <span id="humidityF3"></span> %
+                </div>
               </div>
+
               <div class="card">
                 <div>
                   <div id="dayF4" class="ps-3 pt-3"></div>
-                  <div id="iconF4" class="ps-3">
+                  <div class="ps-3">
                     <div>
-                      <!-- not working  -->
                       <img id="iconF4" src="" />
                     </div>
                   </div>
@@ -185,9 +187,8 @@
               <div class="card bg-light">
                 <div>
                   <div id="dayF5" class="ps-3 pt-3"></div>
-                  <div id="iconF5" class="ps-3">
+                  <div class="ps-3">
                     <div>
-                      <!-- not working  -->
                       <img id="iconF5" src="" />
                     </div>
                   </div>
