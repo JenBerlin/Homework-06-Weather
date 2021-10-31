@@ -27,16 +27,16 @@
 
     <main class="row d-flex">
       <!-- First div contains the Search-Input-Button and the stored city searches -->
-      <div class="row">
+      <div class="row p-3">
         <!-- Contains the Search-Input-Button -->
         <div class="container card border-light ms-4" style="width: 18rem">
-          <div class="col-3"></div>
+          <div class="col-12 col-md-3"></div>
           <h5 class="card-title fw-bold text-primary pt-4 fs-4">
             For which city?
           </h5>
           <input
             type="text"
-            class="form-control mb-3 pb-2 pt-2 border-warning mt-2"
+            class="form-control col-12 mb-3 pb-2 pt-2 border-warning mt-2"
             id="city"
             placeholder="Search"
           />
@@ -47,17 +47,16 @@
 
           <!-- Contains the stored city searches -->
           <h6 class="text-warning fw-bold mt-4">Already checked cities:</h6>
-          <ul class="col-12 list-group ms-4 pt-3" id="city-list">
-          </ul>
+          <ul class="col-md-12 list-group ms-4 pt-3" id="city-list"></ul>
         </div>
 
         <!-- Second main card: containing the current day and the forecast -->
         <div
           class="
-            col-9 col-md-9
+            col-md-9 col-md-9
             bg-white
             border
-            p-2
+            p-3
             mb-3
             d-flex
             flex-column
@@ -66,47 +65,40 @@
         >
           <!-- id used for city shown by js/API + Date by moment.js -->
           <div
-            class="
-              card-header
-              fw-bold
-              text-primary
-              fs-4
-              pt-3
-              border-light
-              bg-white
-            "
-            id="weather-cards-container"
+            class="card-header text-primary fs-4 pt-3 border-light bg-white"
+            id="card-title"
           >
-            Placeholder: City shown by js/API
+            <!-- Date needs to be added; do I use moments for it? -->
+            <h4 class="fw-bold">
+              Placeholder: City shown by js/API (date)
+              <img src="http://openweathermap.org/img/w/04n.png" />
+            </h4>
             <!-- Icon needs to be added to the current city -->
           </div>
 
           <!-- Divs for the four values: Temp, Wind, Humidity, UV Index -->
           <div class="row g-4 align-items-center border-light">
-            <div class="col-8">
+            <div class="col-md-8">
               <div id="current-temp" class="fw-5 pb-3 ps-3">
                 Temp: <span id="temp11"></span>°C
               </div>
               <div id="current-wind" class="fw-5 pb-3 ps-3">
-                Wind: <span id="min-temp"></span>km/h
+                Wind: <span id="wind11"></span>km/h
               </div>
-              <div id="current-huminidy" class="fw-5 pb-3 ps-3">
-                Humidity: <span id="max-temp"></span>%
+              <div id="current-humidity" class="fw-5 pb-3 ps-3">
+                Humidity: <span id="humidity11"></span>%
               </div>
               <div id="current-uv" class="fw-5 ps-3">
-                UV Index:
+                UV Index: <span id="uv11"></span>
+                
                 <input class="rounded-pill" type="text" name="UVI" id="UVI" />
               </div>
-            </div>
-            <!-- Current weather icon -->
-            <div class="col-4">
-              <img src="" alt="current-weather-icon" />
             </div>
 
             <!-- Forecast cards -->
             <div
               class="
-                col-9
+                col-md-9
                 container-fluid
                 mb-3
                 d-flex
@@ -121,11 +113,14 @@
             </div>
 
             <!-- Felx works somehow -->
-            <div class="card-group d-flex flex-wrap">
+            <div class="card-group d-flex flex-wrap justify-content-around">
               <div class="card bg-light">
                 <div>
                   <div id="DayF1" class="ps-3 pt-3">Date</div>
-                  <div id="IconF1" class="ps-3">Icon</div>
+                  <div id="IconF1" class="ps-3">
+                    <!-- Icon needs to be changed -->
+                    <img src="http://openweathermap.org/img/w/04n.png" />
+                  </div>
                   <div class="fw-5 pb-3 ps-3">
                     Temp: <span id="temp11"></span>°C
                   </div>
@@ -140,28 +135,36 @@
               <div class="card">
                 <div>
                   <div id="DayF2" class="ps-3 pt-3">Date</div>
-                  <div id="IconF2" class="ps-3">Icon</div>
+                  <div id="IconF2" class="ps-3">
+                    <img src="http://openweathermap.org/img/w/04n.png" />
+                  </div>
                   <!-- Add the rest -->
                 </div>
               </div>
               <div class="card bg-light">
                 <div>
                   <div id="DayF3" class="ps-3 pt-3">Date</div>
-                  <div id="IconF3" class="ps-3">Icon</div>
+                  <div id="IconF3" class="ps-3">
+                    <img src="http://openweathermap.org/img/w/04n.png" />
+                  </div>
                   <!-- Add the rest -->
                 </div>
               </div>
               <div class="card">
                 <div>
                   <div id="DayF4" class="ps-3 pt-3">Date</div>
-                  <div id="IconF4" class="ps-3">Icon</div>
+                  <div id="IconF4" class="ps-3">
+                    <img src="http://openweathermap.org/img/w/04n.png" />
+                  </div>
                   <!-- Add the rest -->
                 </div>
               </div>
               <div class="card bg-light">
                 <div>
                   <div id="DayF5" class="ps-3 pt-3">Date</div>
-                  <div id="IconF5" class="ps-3">Icon</div>
+                  <div id="IconF5" class="ps-3">
+                    <img src="http://openweathermap.org/img/w/04n.png" />
+                  </div>
                   <!-- Add the rest -->
                 </div>
               </div>
